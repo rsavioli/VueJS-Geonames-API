@@ -1,0 +1,110 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a{
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+ul {
+	list-style: none;
+}
+
+
+html {
+	font: "Tahoma" 14px sans-serif;
+	color: red;
+	background-color: #f9f9f9;
+}
+
+
+.container{
+	padding: 27px 20px;
+	margin: 30px auto 50px;
+	max-width: 1250px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	background-color: #fff;
+	box-shadow: 0 0 1px #ccc;
+}
+
+/* estados  */
+
+.estados{
+	flex: 0 0 100%;
+	min-width: 400px;
+	padding: 20px 42px;
+}
+
+.estados h2{
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+.estados .list{
+	border-top: 1px solid #bec9d0;
+	padding-top: 20px;
+	list-style: none;
+}
+
+.estados .list li{
+	margin-bottom: 17px;
+}
+
+/* render */
+
+.render{
+	display: flex;
+}
+
+.pagination li a {
+	float:left;
+	border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px;
+    margin: 1px 2px;
+    padding: 5px 10px;
+    display: inline-block;
+    border-top: 1px solid #fff;
+    text-decoration: none;
+    color: #717171;
+    font-size: smaller;
+    font-family: "Helvetica Neueu", Helvetica, Arial, sans-serif;
+    text-shadow: white 0 1px 0;
+}
+
+.pagination a.first::after {
+  content:'...'
+}
+
+.pagination a.last::before {
+  content:'...'
+}
+
+@media(max-width: 1250px){
+	.container{
+		justify-content: center;
+		margin: 30px 30px 50px 30px;
+	}
+
+	.estados{
+		flex: 0 0 33%;
+		min-width: 400px;
+		padding: 20px 42px;
+	}
+}
+
+
+@media(max-width: 500px){
+
+	.estados{
+		min-width: 300px;
+	    padding: 20px 15px;
+	}
+}

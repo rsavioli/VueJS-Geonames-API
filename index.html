@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Teste VueJS - Rafael Savioli</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+</head>
+<body>
+	<div id="main">
+		<div class="container">
+			<div class="estados">
+				<h2>Estados do Brasil</h2>
+				<ul class="list">
+					<li v-for="estado in estados | paginate">
+						<div class="render">
+							<div class="details">
+								<a href="#">
+					    			{{ estado.name }}
+					    		</a>			
+							</div>
+						</div>	
+					</li>
+				</ul>
+
+
+				<ul class="pagination">
+				    <li v-for="pageNumber in totalPages" v-if="Math.abs(pageNumber - currentPage) < 3 || pageNumber == totalPages - 1 || pageNumber == 0">
+				    	<a href="#" @click="setPage(pageNumber)"  :class="{current: currentPage === pageNumber, last: (pageNumber == totalPages - 1 && Math.abs(pageNumber - currentPage) > 3), first:(pageNumber == 0 && Math.abs(pageNumber - currentPage) > 3)}">{{ pageNumber+1 }}</a>
+				    </li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<script src="assets/js/vue.js"></script>
+	<script src="assets/js/vue-resource.min.js"></script>
+	<script src="assets/js/script.js"></script>
+</body>
+</html>
